@@ -3,4 +3,4 @@ project(satreci C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(satreci main.c)
+add_executable(satreci main.c func.c func.h)
