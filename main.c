@@ -2,6 +2,7 @@
 
 int main(int argc, char *argv[]) {
 
+    dataFileInput();
     printf("성적 관리 프로그램을 시작합니다.\n");
     while(1) {
         int num;
