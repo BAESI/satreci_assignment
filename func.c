@@ -1,20 +1,12 @@
 #include "func.h"
 
-Student students[100];
+Student students[101];
 Student students_add[100];
 int dataNum = 0;
 
-/*void appandChar(char* char1, char* char2) {
-    while(*char1) {
-        char1++;
-    }
-    while(*char2) {
-        *char1 = *char2;
-        char2++;
-        char1++;
-    }
-    *char1 = '\0';
-}*/
+void writeFile(int i) {
+
+}
 
 
 int addStudent() {
@@ -117,10 +109,68 @@ int addStudent() {
     printf("학생 정보 입력을 완료하였습니다.\n");
     printf("-------------------------------------\n");
 
+    dataNum = 0;
+    dataFileInput();
 }
 
-void deleteStudent() {
+int deleteStudent() {
 
+    int deleteStudentNum;
+    int status = 0;
+
+    printf("등록된 학생 정보를 삭제합니다.\n");
+    printf("삭제할 학생의 학번을 입력해주세요: ");
+    scanf("%d",&deleteStudentNum);
+
+    // 해당 학생을 탐색
+    for (int i = 0; i < dataNum; i++) {
+        if (students[i].studentNum == deleteStudentNum) {
+            for (int j = i; j < dataNum; j++) {
+                    students[j] = students[j+1];
+            }
+            status = 1;
+            dataNum--;
+        }
+    }
+    if (status == 0) {
+        printf("해당 학생이 존재하지 않습니다.\n");
+        printf("-------------------------------------\n");
+    }
+    else {
+        FILE *fp;
+        char buffer[100];
+
+        fp = fopen("studentlist.txt","w");
+
+        for (int i = 0; i < dataNum; i++) {
+            fputs(students[i].name, fp);
+            fputs(",", fp);
+            sprintf(buffer, "%d", students[i].studentNum);
+            fputs(buffer, fp);
+            fputs(",", fp);
+            sprintf(buffer, "%d", students[i].kor);
+            fputs(buffer, fp);
+            fputs(",", fp);
+            sprintf(buffer, "%d", students[i].eng);
+            fputs(buffer, fp);
+            fputs(",", fp);
+            sprintf(buffer, "%d", students[i].mat);
+            fputs(buffer, fp);
+            fputs(",", fp);
+            sprintf(buffer, "%d", students[i].soc);
+            fputs(buffer, fp);
+            fputs(",", fp);
+            sprintf(buffer, "%d", students[i].sci);
+            fputs(buffer, fp);
+            if (i != dataNum-1) {
+                fputs("\n", fp);
+            }
+        }
+        fclose(fp);
+        printf("해당 학생의 정보를 삭제하였습니다.\n");
+        printf("-------------------------------------\n");
+    }
+    dataFileInput();
 }
 
 void printSortList() {
