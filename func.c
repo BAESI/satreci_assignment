@@ -1,13 +1,33 @@
 #include "func.h"
 
-Student students[101];
-Student students_add[100];
+Student students[100];
 int dataNum = 0;
 
-void writeFile(int i) {
-
+void printStudentList() {
+    printf("이름    학번     국어     영어     수학     사회     과학     평균\n");
+    printf("---------------------------------------------------------\n");
+    for (int i = 0; i < dataNum; i++) {
+        printf("%s    %d      %d      %d      %d      %d     %d     %.2f\n",students[i].name,students[i].studentNum,
+               students[i].kor,students[i].eng,students[i].mat,students[i].soc,students[i].sci,students[i].evg);
+    }
+    printf("---------------------------------------------------------\n");
 }
 
+int str_compare(char* str1,char* str2) {
+    while (*str1 != '\0' || *str2 != '\0') {
+        if (*str1 > *str2) {
+            return 1;
+        }
+        else if (*str1 < *str2) {
+            return -1;
+        }
+        else {
+            str1++;
+            str2++;
+        }
+    }
+    return 0;
+}
 
 int addStudent() {
     char inputName[10];
@@ -170,11 +190,59 @@ int deleteStudent() {
         printf("해당 학생의 정보를 삭제하였습니다.\n");
         printf("-------------------------------------\n");
     }
-    dataFileInput();
 }
 
 void printSortList() {
+    Student temp;
+    int num;
 
+    printf("학생정보를 출력합니다.\n");
+    printf("1.이름순 2.학번순 3.평균순 0.종료\n");
+    printf("원하는 정렬방식의 번호를 입력해주세요: ");
+    scanf("%d",&num);
+
+    switch (num) {
+        case 1: {
+            printf("이름순정렬\n");
+            for (int i = 0; i<dataNum-1; i++) {
+                for (int j = i+1; j < dataNum; j++ ) {
+                    if (str_compare(students[i].name,students[j].name) > 0) {
+                        temp = students[i];
+                        students[i] = students[j];
+                        students[j] = temp;
+                    }
+                }
+            }
+            break;
+        }
+        case 2: {
+            printf("학번순정렬\n");
+            for (int i = 0; i<dataNum-1; i++) {
+                for (int j = i+1; j < dataNum; j++ ) {
+                    if ( students[i].studentNum > students[j].studentNum) {
+                        temp = students[i];
+                        students[i] = students[j];
+                        students[j] = temp;
+                    }
+                }
+            }
+            break;
+        }
+        case 3: {
+            printf("평균순정렬\n");
+            for (int i = 0; i<dataNum-1; i++) {
+                for (int j = i+1; j < dataNum; j++ ) {
+                    if ( students[i].evg < students[j].evg) {
+                        temp = students[i];
+                        students[i] = students[j];
+                        students[j] = temp;
+                    }
+                }
+            }
+            break;
+        }
+    }
+    printStudentList();
 }
 
 void selectMenu(int num) {
@@ -198,6 +266,7 @@ void selectMenu(int num) {
 }
 
 void dataFileInput() {
+
     char listLine[100];
     FILE *fp;
     fp = fopen("studentlist.txt", "r");
