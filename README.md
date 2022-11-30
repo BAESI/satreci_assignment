@@ -17,5 +17,6 @@
 
 ## 실행 방법
 현재 cmake-build-debug 디렉토리안에 studentlist.txt 파일안에 기본데이터가 저장되어 있는 상태입니다.<br> 
-프로그램을 실행시키기 위해 cmake-bulid-debug 디렉토리에서 ./satrci 명령어를 통해 프로그램을 실행할 수 있습니다.
+프로그램을 실행시키기 위해 cmake-bulid-debug 디렉토리에서 ./satrci 명령어를 통해 프로그램을 실행할 수 있습니다.<br>
+
 ![image](https://user-images.githubusercontent.com/28686402/204726626-b3abf779-b86e-4604-a666-52a7c46007b0.png)
