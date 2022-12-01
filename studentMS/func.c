@@ -3,6 +3,67 @@
 Student students[100];
 int dataNum = 0;
 
+void _strcpy(char *str1,char *str2) {
+    while (*str2 != '\0') {
+        *str1 = *str2;
+        str1++;
+        str2++;
+    }
+    *str1 = '\0';
+
+}
+
+int _strlen(char *str) {
+    int cnt = 0;
+    while(str[cnt] != '\0') {
+        ++cnt;
+    }
+    return cnt;
+}
+
+char* _strtok(char *str, char* delim) {
+    char* sStr = 0;
+    static char* tstr;
+    int i = 0;
+
+    if (str != NULL) {
+        sStr = str;
+    }
+    else {
+        sStr = tstr;
+    }
+    if (_strlen(sStr) < 1 ) {
+        return NULL;
+    }
+    for (i = 0; i < _strlen(sStr); i++) {
+        if (sStr[i] == (*delim) || sStr[i] == '\0') {
+            sStr[i] = '\0';
+            break;
+        }
+    }
+    tstr=&sStr[i+1];
+    return sStr;
+}
+
+int _atoi(char* cdata) {
+    int sign = 1;
+    int data = 0;
+
+    if (*cdata == '\n') {
+        return 0;
+    }
+    if (*cdata == '-') {
+        sign = -1;
+    }
+    while (*cdata) {
+        if (*cdata >= '0' && *cdata <= '9') {
+            data = data * 10 + *cdata - '0';
+        }
+        cdata++;
+    }
+    return data * sign;
+}
+
 void printStudentList() {
     printf("이름    학번     국어     영어     수학     사회     과학     평균\n");
     printf("---------------------------------------------------------\n");
@@ -95,35 +156,48 @@ int addStudent() {
         return 0;
     }
 
-    char studentNumberToChar[1000];
+    /* char studentNumberToChar[1000];
     char korToChar[100];
     char engToChar[100];
     char matToChar[100];
     char socToChar[100];
-    char sciToChar[100];
+    char sciToChar[100]; */
+    char buffer[100];
 
+    /*
     sprintf(studentNumberToChar, "%d", inputStudentNum);
     sprintf(korToChar, "%d", inputKor);
     sprintf(engToChar, "%d", inputEng);
     sprintf(matToChar, "%d", inputMat);
     sprintf(socToChar, "%d", inputSoc);
-    sprintf(sciToChar, "%d", inputSci);
+    sprintf(sciToChar, "%d", inputSci);*/
 
     fp = fopen("studentlist.txt","a");
     fputs("\n",fp);
     fputs(inputName,fp);
     fputs(",",fp);
-    fputs(studentNumberToChar,fp);
+    sprintf(buffer, "%d", inputStudentNum);
+    fputs(buffer,fp);
     fputs(",",fp);
-    fputs(korToChar,fp);
+    sprintf(buffer, "%d", inputKor);
+    fputs(buffer,fp);
+    //fputs(korToChar,fp);
     fputs(",",fp);
-    fputs(engToChar,fp);
+    sprintf(buffer, "%d", inputEng);
+    fputs(buffer,fp);
+    //fputs(engToChar,fp);
     fputs(",",fp);
-    fputs(matToChar,fp);
+    sprintf(buffer, "%d", inputMat);
+    fputs(buffer,fp);
+    //fputs(matToChar,fp);
     fputs(",",fp);
-    fputs(socToChar,fp);
+    sprintf(buffer, "%d", inputSoc);
+    fputs(buffer,fp);
+    //fputs(socToChar,fp);
     fputs(",",fp);
-    fputs(sciToChar,fp);
+    sprintf(buffer, "%d", inputSci);
+    fputs(buffer,fp);
+    //fputs(sciToChar,fp);
     fclose(fp);
 
     printf("학생 정보 입력을 완료하였습니다.\n");
@@ -265,7 +339,7 @@ void selectMenu(int num) {
     }
 }
 
-void dataFileInput() {
+int dataFileInput() {
 
     char listLine[100];
     FILE *fp;
@@ -273,18 +347,18 @@ void dataFileInput() {
 
     if (fp == NULL) {
         printf("데이터 파일을 불러오는데 실패하였습니다. 프로그램을 종료합니다.\n");
-        exit(0);
+        return 1;
     }
     else {
         while(fgets(listLine, 100, fp) != NULL) {
             char *tmp;
             int tempStudentData[6];
-            tmp = strtok(listLine, ",");
+            tmp = _strtok(listLine, ",");
             //students[dataNum].name = tmp;
-            strcpy(students[dataNum].name,tmp);
+            _strcpy(students[dataNum].name,tmp);
             for(int i = 0; i < 6; i++) {
-                tmp = strtok(NULL, ",");
-                tempStudentData[i] = atoi(tmp);
+                tmp = _strtok(NULL, ",");
+                tempStudentData[i] = _atoi(tmp);
             }
             students[dataNum].studentNum = tempStudentData[0];
             students[dataNum].kor = tempStudentData[1];
@@ -298,4 +372,5 @@ void dataFileInput() {
         }
     }
     fclose(fp);
+    return 0;
 }

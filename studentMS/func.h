@@ -1,16 +1,13 @@
 #ifndef SATRECI_FUNC_H
 #define SATRECI_FUNC_H
 #include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-
 
 void selectMenu(int num);
 
-void dataFileInput();
+int dataFileInput();
 
 typedef struct student {
-    char name[10];
+    char name[20];
     int studentNum,kor,eng,mat,soc,sci;
     double evg;
 }Student;
