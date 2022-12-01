@@ -2,9 +2,27 @@
 #define SATRECI_FUNC_H
 #include <stdio.h>
 
-void selectMenu(int num);
+void custom_strcpy(char *str1,char *str2);
+
+int custom_strlen(char *str);
+
+char* custom_strtok(char *str, char* delim);
+
+int custom_atoi(char* cdata);
 
 int dataFileInput();
+
+void printStudentList();
+
+int str_compare(char* str1,char* str2);
+
+int addStudent();
+
+int deleteStudent();
+
+void printSortList();
+
+void selectMenu(int num);
 
 typedef struct student {
     char name[20];

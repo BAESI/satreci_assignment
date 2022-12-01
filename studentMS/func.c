@@ -3,7 +3,7 @@
 Student students[100];
 int dataNum = 0;
 
-void _strcpy(char *str1,char *str2) {
+void custom_strcpy(char *str1,char *str2) {
     while (*str2 != '\0') {
         *str1 = *str2;
         str1++;
@@ -13,7 +13,7 @@ void _strcpy(char *str1,char *str2) {
 
 }
 
-int _strlen(char *str) {
+int custom_strlen(char *str) {
     int cnt = 0;
     while(str[cnt] != '\0') {
         ++cnt;
@@ -21,10 +21,10 @@ int _strlen(char *str) {
     return cnt;
 }
 
-char* _strtok(char *str, char* delim) {
-    char* sStr = 0;
+char* custom_strtok(char *str, char* delim) {
+    char* sStr;
     static char* tstr;
-    int i = 0;
+    int i;
 
     if (str != NULL) {
         sStr = str;
@@ -32,10 +32,10 @@ char* _strtok(char *str, char* delim) {
     else {
         sStr = tstr;
     }
-    if (_strlen(sStr) < 1 ) {
+    if (custom_strlen(sStr) < 1 ) {
         return NULL;
     }
-    for (i = 0; i < _strlen(sStr); i++) {
+    for (i = 0; i < custom_strlen(sStr); i++) {
         if (sStr[i] == (*delim) || sStr[i] == '\0') {
             sStr[i] = '\0';
             break;
@@ -45,7 +45,7 @@ char* _strtok(char *str, char* delim) {
     return sStr;
 }
 
-int _atoi(char* cdata) {
+int custom_atoi(char* cdata) {
     int sign = 1;
     int data = 0;
 
@@ -98,7 +98,6 @@ int addStudent() {
     int inputMat;
     int inputSoc;
     int inputSci;
-    char inputString[100];
 
     FILE *fp;
 
@@ -353,12 +352,12 @@ int dataFileInput() {
         while(fgets(listLine, 100, fp) != NULL) {
             char *tmp;
             int tempStudentData[6];
-            tmp = _strtok(listLine, ",");
+            tmp = custom_strtok(listLine, ",");
             //students[dataNum].name = tmp;
-            _strcpy(students[dataNum].name,tmp);
+            custom_strcpy(students[dataNum].name,tmp);
             for(int i = 0; i < 6; i++) {
-                tmp = _strtok(NULL, ",");
-                tempStudentData[i] = _atoi(tmp);
+                tmp = custom_strtok(NULL, ",");
+                tempStudentData[i] = custom_atoi(tmp);
             }
             students[dataNum].studentNum = tempStudentData[0];
             students[dataNum].kor = tempStudentData[1];
