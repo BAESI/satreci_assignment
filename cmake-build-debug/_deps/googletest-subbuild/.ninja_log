@@ -1,0 +1,21 @@
+# ninja log v5
+0	11	1669963337375271616	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-mkdir	241e035c2e5298dd
+0	11	1669963337375271616	/Users/baesihyeon/Desktop/satreci/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-mkdir	241e035c2e5298dd
+11	1153	1669963338516764318	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-download	a99b8863c4028760
+11	1153	1669963338516764318	/Users/baesihyeon/Desktop/satreci/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-download	a99b8863c4028760
+1153	1165	1669963338528846896	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-update	1b5ca28388d97ee
+1153	1165	1669963338528846896	/Users/baesihyeon/Desktop/satreci/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-update	1b5ca28388d97ee
+1165	1178	1669963338541710054	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-patch	d4fda3ace277da86
+1165	1178	1669963338541710054	/Users/baesihyeon/Desktop/satreci/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-patch	d4fda3ace277da86
+1178	1188	1669963338552051264	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-configure	ce6a74810d96a84
+1178	1188	1669963338552051264	/Users/baesihyeon/Desktop/satreci/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-configure	ce6a74810d96a84
+1188	1197	1669963338561520018	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-build	317d2dea7b57127c
+1188	1197	1669963338561520018	/Users/baesihyeon/Desktop/satreci/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-build	317d2dea7b57127c
+1197	1207	1669963338571222980	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-install	9525f159a394ef4
+1197	1207	1669963338571222980	/Users/baesihyeon/Desktop/satreci/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-install	9525f159a394ef4
+1207	1217	1669963338580850776	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-test	d4dd0d1e01287b14
+1207	1217	1669963338580850776	/Users/baesihyeon/Desktop/satreci/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-test	d4dd0d1e01287b14
+1217	1231	1669963338594991804	CMakeFiles/googletest-populate-complete	b5fab8dd7ef7c4f8
+1217	1231	1669963338594991804	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-done	b5fab8dd7ef7c4f8
+1217	1231	1669963338594991804	/Users/baesihyeon/Desktop/satreci/cmake-build-debug/_deps/googletest-subbuild/CMakeFiles/googletest-populate-complete	b5fab8dd7ef7c4f8
+1217	1231	1669963338594991804	/Users/baesihyeon/Desktop/satreci/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-done	b5fab8dd7ef7c4f8

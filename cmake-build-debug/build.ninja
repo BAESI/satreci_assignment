@@ -46,17 +46,17 @@ cmake_ninja_workdir = /Users/baesihyeon/Desktop/satreci/cmake-build-debug/
 
 build cmake_object_order_depends_target_satreci: phony || CMakeFiles/satreci.dir
 
+build CMakeFiles/satreci.dir/studentMS/main.c.o: C_COMPILER__satreci_Debug /Users/baesihyeon/Desktop/satreci/studentMS/main.c || cmake_object_order_depends_target_satreci
+  DEP_FILE = CMakeFiles/satreci.dir/studentMS/main.c.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk -std=gnu99
+  OBJECT_DIR = CMakeFiles/satreci.dir
+  OBJECT_FILE_DIR = CMakeFiles/satreci.dir/studentMS
+
 build CMakeFiles/satreci.dir/studentMS/func.c.o: C_COMPILER__satreci_Debug /Users/baesihyeon/Desktop/satreci/studentMS/func.c || cmake_object_order_depends_target_satreci
   DEP_FILE = CMakeFiles/satreci.dir/studentMS/func.c.o.d
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk -std=gnu99
   OBJECT_DIR = CMakeFiles/satreci.dir
   OBJECT_FILE_DIR = CMakeFiles/satreci.dir/studentMS
-
-build CMakeFiles/satreci.dir/studentMS_tests/unit_test.c.o: C_COMPILER__satreci_Debug /Users/baesihyeon/Desktop/satreci/studentMS_tests/unit_test.c || cmake_object_order_depends_target_satreci
-  DEP_FILE = CMakeFiles/satreci.dir/studentMS_tests/unit_test.c.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk -std=gnu99
-  OBJECT_DIR = CMakeFiles/satreci.dir
-  OBJECT_FILE_DIR = CMakeFiles/satreci.dir/studentMS_tests
 
 
 # =============================================================================
@@ -66,7 +66,7 @@ build CMakeFiles/satreci.dir/studentMS_tests/unit_test.c.o: C_COMPILER__satreci_
 #############################################
 # Link the executable satreci
 
-build satreci: C_EXECUTABLE_LINKER__satreci_Debug CMakeFiles/satreci.dir/studentMS/func.c.o CMakeFiles/satreci.dir/studentMS_tests/unit_test.c.o
+build satreci: C_EXECUTABLE_LINKER__satreci_Debug CMakeFiles/satreci.dir/studentMS/main.c.o CMakeFiles/satreci.dir/studentMS/func.c.o
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk
   OBJECT_DIR = CMakeFiles/satreci.dir
   POST_BUILD = :

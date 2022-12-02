@@ -1,10 +1,10 @@
 # ninja log v5
-0	44	1669897289176490327	build.ninja	b3eb35fd48fde0ab
-0	51	1669897217899229791	satreci	efa21c75cce2cc40
+0	47	1669965242655708536	build.ninja	b3eb35fd48fde0ab
+24	54	1669965100673683632	satreci	1ac650214955be4b
 0	196	1669721921123598502	CMakeFiles/satreci.dir/main.c.o	8fa8ce0511b969bd
-0	36	1669893652464311315	CMakeFiles/satreci.dir/studentMS/func.c.o	d84eb3a9848602d5
 0	30	1669726356748936066	CMakeFiles/satreci.dir/func.c.o	fd7c66d14c4a2953
-0	32	1669893652459638749	CMakeFiles/satreci.dir/studentMS/main.c.o	fce2eb9ae1f68681
-1	29	1669896979376659774	CMakeFiles/satreci.dir/studentMS_tests/unit_test.c.o	fa08eeecdda849b1
-0	36	1669897289176490327	build.ninja	b3eb35fd48fde0ab
-0	30	1669897289213783062	satreci	1ac650214955be4b
+1	127	1669900458046350626	CMakeFiles/satreci.dir/studentMS/func.c.o	d84eb3a9848602d5
+0	23	1669900507211482986	CMakeFiles/satreci.dir/studentMS/main.c.o	fce2eb9ae1f68681
+1	24	1669965100642344549	CMakeFiles/satreci.dir/studentMS_tests/unit_test.c.o	fa08eeecdda849b1
+0	41	1669965242655708536	build.ninja	b3eb35fd48fde0ab
+0	31	1669965242694195920	satreci	efa21c75cce2cc40
