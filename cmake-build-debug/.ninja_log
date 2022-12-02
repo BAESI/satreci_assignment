@@ -8,3 +8,5 @@
 1	24	1669965100642344549	CMakeFiles/satreci.dir/studentMS_tests/unit_test.c.o	fa08eeecdda849b1
 0	41	1669965242655708536	build.ninja	b3eb35fd48fde0ab
 0	31	1669965242694195920	satreci	efa21c75cce2cc40
+1	40	1669973874562563661	CMakeFiles/satreci.dir/studentMS/func.c.o	d84eb3a9848602d5
+40	74	1669973874597656099	satreci	efa21c75cce2cc40

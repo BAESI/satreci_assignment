@@ -1,6 +1,6 @@
 #include "func.h"
 
-Student students[100];
+Student students[3000];
 int dataNum = 0;
 
 void custom_strcpy(char *str1,char *str2) {
@@ -155,21 +155,7 @@ int addStudent() {
         return 0;
     }
 
-    /* char studentNumberToChar[1000];
-    char korToChar[100];
-    char engToChar[100];
-    char matToChar[100];
-    char socToChar[100];
-    char sciToChar[100]; */
     char buffer[100];
-
-    /*
-    sprintf(studentNumberToChar, "%d", inputStudentNum);
-    sprintf(korToChar, "%d", inputKor);
-    sprintf(engToChar, "%d", inputEng);
-    sprintf(matToChar, "%d", inputMat);
-    sprintf(socToChar, "%d", inputSoc);
-    sprintf(sciToChar, "%d", inputSci);*/
 
     fp = fopen("studentlist.txt","a");
     fputs("\n",fp);
@@ -180,23 +166,18 @@ int addStudent() {
     fputs(",",fp);
     sprintf(buffer, "%d", inputKor);
     fputs(buffer,fp);
-    //fputs(korToChar,fp);
     fputs(",",fp);
     sprintf(buffer, "%d", inputEng);
     fputs(buffer,fp);
-    //fputs(engToChar,fp);
     fputs(",",fp);
     sprintf(buffer, "%d", inputMat);
     fputs(buffer,fp);
-    //fputs(matToChar,fp);
     fputs(",",fp);
     sprintf(buffer, "%d", inputSoc);
     fputs(buffer,fp);
-    //fputs(socToChar,fp);
     fputs(",",fp);
     sprintf(buffer, "%d", inputSci);
     fputs(buffer,fp);
-    //fputs(sciToChar,fp);
     fclose(fp);
 
     printf("학생 정보 입력을 완료하였습니다.\n");
