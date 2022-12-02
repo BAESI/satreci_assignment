@@ -69,7 +69,7 @@ void printStudentList() {
     printf("---------------------------------------------------------\n");
     for (int i = 0; i < dataNum; i++) {
         printf("%s    %d      %d      %d      %d      %d     %d     %.2f\n",students[i].name,students[i].studentNum,
-               students[i].kor,students[i].eng,students[i].mat,students[i].soc,students[i].sci,students[i].evg);
+               students[i].kor,students[i].eng,students[i].mat,students[i].soc,students[i].sci,students[i].avg);
     }
     printf("---------------------------------------------------------\n");
 }
@@ -286,7 +286,7 @@ void printSortList() {
             printf("평균순정렬\n");
             for (int i = 0; i<dataNum-1; i++) {
                 for (int j = i+1; j < dataNum; j++ ) {
-                    if ( students[i].evg < students[j].evg) {
+                    if ( students[i].avg < students[j].avg) {
                         temp = students[i];
                         students[i] = students[j];
                         students[j] = temp;
@@ -346,7 +346,7 @@ int dataFileInput() {
             students[dataNum].mat = tempStudentData[3];
             students[dataNum].soc = tempStudentData[4];
             students[dataNum].sci = tempStudentData[5];
-            students[dataNum].evg = ((double)students[dataNum].kor + (double)students[dataNum].eng + (double)students[dataNum].mat +
+            students[dataNum].avg = ((double)students[dataNum].kor + (double)students[dataNum].eng + (double)students[dataNum].mat +
                     (double)students[dataNum].soc + (double)students[dataNum].sci)/5;
             dataNum++;
         }

@@ -27,7 +27,7 @@ void selectMenu(int num);
 typedef struct student {
     char name[20];
     int studentNum,kor,eng,mat,soc,sci;
-    double evg;
+    double avg;
 }Student;
 
 
